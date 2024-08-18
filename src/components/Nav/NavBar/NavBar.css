@@ -1,0 +1,12 @@
+nav{
+    background-color: rgb(231, 216, 216);
+}
+
+#logo h1{
+    font-family: 'GFS Didot', serif;
+}
+
+#menu{
+    background-color: gainsboro;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}

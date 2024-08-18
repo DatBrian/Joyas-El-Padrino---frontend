@@ -1,0 +1,13 @@
+
+.MenuButton{
+    width: 100vh;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all ease 1s;
+}
+
+.MenuButton:hover{
+    background-color: gold;
+    color: darkgray;
+}
