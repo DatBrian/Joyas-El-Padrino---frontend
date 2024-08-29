@@ -14,5 +14,5 @@
 .navButton:hover{
     background-color: #ffd90089;
     border-radius: .5em;
-    color: darkgrey;
+    height: 80%;
 }

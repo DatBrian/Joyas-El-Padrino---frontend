@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "../Link/Link";
 import "./NavBar.css";
 import LinkMenu from "../LinkMenu/LinkMenu";
 
@@ -8,15 +7,16 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className=" relative z-20 flex justify-between items-center text-black h-20 px-8 md:px-32 drop-shadow-md">
+      <nav className=" fixed w-full z-20 flex justify-between items-center text-white h-20 px-8 md:px-32 drop-shadow-md">
         <div id="logo">
           <h1>El Padrino</h1>
         </div>
         <div className="hidden xl:flex items-center gap-7 font-semibold text-base h-full">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/a"}>Servicios</Link>
-          <Link to={"/b"}>Sobre Nosotros</Link>
-          <Link to={"/c"}>Contactános</Link>
+          <a href="/">Home</a>
+          <a href="#services">Servicios</a>
+          <a href="#about">Sobre Nosotros</a>
+          <a href="#contact">Contacto</a>
+          <button>Login</button>
         </div>
 
         <i

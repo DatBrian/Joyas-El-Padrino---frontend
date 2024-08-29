@@ -5,6 +5,15 @@
 @tailwind utilities;
 
 
+html, body{
+  scroll-behavior: smooth!important;
+}
+
+h1{
+    font-family: 'GFS Didot', serif;
+  }
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

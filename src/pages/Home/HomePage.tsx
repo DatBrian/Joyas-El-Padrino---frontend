@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import "./HomePage.css";
+import Services from "@/components/Services/Services";
+import About from "@/components/About/About";
+import Contact from "@/components/Contact/Contact";
+import NavBar from "@/components/Nav/NavBar/NavBar";
 
 const HomePage = () => {
   return (
     <>
-      <main className="h-max bg-black flex overflow-hidden flex-col">
+      <NavBar />
+
+      <section className="mt-20 h-max bg-black flex overflow-hidden flex-col">
         <div
           id="banner"
           className="relative w-screen bg-cover bg-no-repeat bg-center"
@@ -21,7 +27,10 @@ const HomePage = () => {
             <Button>Consigue la Tuya</Button>
           </div>
         </div>
-      </main>
+      </section>
+      <Services />
+      <About />
+      <Contact />
     </>
   );
 };
