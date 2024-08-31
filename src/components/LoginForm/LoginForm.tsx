@@ -15,7 +15,8 @@ const LoginForm = () => {
     },
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => { };
+
   return (
     <>
       <Form {...newForm}>
