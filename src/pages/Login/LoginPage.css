@@ -1,0 +1,15 @@
+#loginSection {
+  height: 80vh;
+}
+
+#loginBackground {
+  background-position: center;
+  background-image: url("/src/assets/images/fondo-login.jpg");
+  background-repeat: no-repeat;
+  transform-origin: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+}

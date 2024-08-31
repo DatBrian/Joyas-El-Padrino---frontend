@@ -1,7 +1,6 @@
 #banner{
     background-image: url("/src/assets/images/banner1.jpg");
     background-blend-mode: multiply;
-    transform: rotate(50%);
     opacity: 0.8;
     height: 90vh;
 }
