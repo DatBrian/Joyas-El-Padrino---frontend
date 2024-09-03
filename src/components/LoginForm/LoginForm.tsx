@@ -5,17 +5,32 @@ import * as z from "zod";
 import { Form } from "../ui/form";
 import FormInputField from "../ui/FormField/FormInputField";
 import { Button } from "../ui/button";
+import { IUserLogin } from "@/types";
+import { loginRequest } from "@/api";
+import { useAuthStore } from "@/store/authStore/authStore";
 
 const LoginForm = () => {
+  const setToken = useAuthStore((state) => state.setToken);
+  const setName = useAuthStore((state) => state.setProfile);
   const newForm = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
       username: "",
-      password: "",
+      contraseña: "",
     },
   });
 
-  const handleSubmit = () => { };
+  const setAuthValues = (token: string, name: string) => {
+    setToken(token);
+    setName(name);
+  };
+
+  const handleSubmit = async (data: IUserLogin) => {
+    const resLogin = await loginRequest(data);
+    const token = resLogin.data.token;
+    const name = resLogin.data.usuario.name;
+    setAuthValues(token, name);
+  };
 
   return (
     <>
@@ -33,7 +48,7 @@ const LoginForm = () => {
           />
           <FormInputField
             control={newForm.control}
-            name="password"
+            name="contraseña"
             label="Contraseña"
             placeholder="Ingrese su contraseña"
             type="password"
