@@ -9,14 +9,21 @@ const NavBar = () => {
   return (
     <>
       <nav className=" fixed w-full z-20 flex justify-between items-center text-white h-20 px-8 md:px-32 drop-shadow-md">
-        <div id="logo">
-          <h1>El Padrino</h1>
-        </div>
+        <div id="logo"></div>
         <div className="hidden xl:flex items-center gap-7 font-semibold text-base h-full">
-          <a href="/">Home</a>
-          <a href="#services">Servicios</a>
-          <a href="#about">Sobre Nosotros</a>
-          <a href="#contact">Contacto</a>
+          <Link className="navLinkBtn" to={"/"}>
+            Home
+          </Link>
+          <Link className="navLinkBtn" to={"/services"}>
+            Servicios
+          </Link>
+          <Link className="navLinkBtn" to={"/about"}>
+            About
+          </Link>
+          <Link className="navLinkBtn" to={"/contact"}>
+            Contacto
+          </Link>
+
           <Link to={"/login"} className="Btn">
             <div className="sign">
               <svg viewBox="0 0 512 512">

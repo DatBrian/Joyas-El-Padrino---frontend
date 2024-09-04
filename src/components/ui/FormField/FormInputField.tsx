@@ -8,6 +8,7 @@ import {
 } from "../form";
 import { Input } from "../input";
 import { IFormInputFieldProps } from "./FormField.types";
+import "./FormInputField.css";
 
 const FormInputField = <T extends FieldValues>({
   control,
@@ -22,7 +23,7 @@ const FormInputField = <T extends FieldValues>({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="contactFormLabel">{label}</FormLabel>
           <FormControl>
             <Input placeholder={placeholder} type={type} {...field} />
           </FormControl>

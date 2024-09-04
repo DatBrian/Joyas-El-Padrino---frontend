@@ -8,14 +8,17 @@ const Dashboard = () => {
   const name = useAuthStore().name;
 
   useEffect(() => {
-    const mensajes = fetchMensajes();
-    console.log(mensajes);
-  });
+    const fetchMessages = async () => {
+      try {
+        const mensajes = await getAllMessages();
+        console.log(mensajes);
+      } catch (error) {
+        console.error("Error fetching messages:", error);
+      }
+    };
 
-  const fetchMensajes = async () => {
-    const mensajes = await getAllMessages();
-    return mensajes;
-  };
+    fetchMessages();
+  }, []);
 
   return (
     <>

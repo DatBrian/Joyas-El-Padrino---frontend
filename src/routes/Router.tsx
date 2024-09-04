@@ -6,6 +6,9 @@ import HomeLayout from "@/layouts/HomeLayout/HomeLayout";
 import AdminLayout from "@/layouts/AdminLayout/AdminLayout";
 import Dashboard from "@/pages/Dashboard/Dashboard";
 import Messages from "@/pages/Messages/Messages";
+import ServiciosPage from "@/pages/Servicios/ServiciosPage";
+import AboutPage from "@/pages/About/AboutPage";
+import ContactPage from "@/pages/Contact/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Root />,
+      },
+      {
+        path: "services",
+        element: <ServiciosPage />
+      },
+      {
+        path: "about",
+        element: <AboutPage/>
+      },
+      {
+        path: "contact",
+        element: <ContactPage/>
       },
       {
         path: "login",
