@@ -23,6 +23,6 @@ export const loginRequest = async (credentials: IUserLogin) => {
     } else {
       console.error("Error desconocido:", error);
     }
-    throw error; // Re-lanzar el error para manejarlo más arriba si es necesario
+    throw error;
   }
 };

@@ -6,19 +6,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import "./FormContact.css";
+import { IPostMessage } from "@/types";
+import { postMesage } from "@/api";
 
 const FormContact = () => {
   const newForm = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
+      nombre: "",
+      telefono: "",
+      mensaje: "",
     },
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (data: IPostMessage) => {
+    const res = await postMesage(data);
+    console.log(res);
+  };
 
   return (
     <>
@@ -30,22 +34,14 @@ const FormContact = () => {
         >
           <FormInputField
             control={newForm.control}
-            name="name"
+            name="nombre"
             label="Nombre"
             placeholder="Ingrese su nombre"
           />
 
           <FormInputField
             control={newForm.control}
-            name="email"
-            label="Correo"
-            type="email"
-            placeholder="Ingrese su correo"
-          />
-
-          <FormInputField
-            control={newForm.control}
-            name="phone"
+            name="telefono"
             label="Teléfono"
             type="number"
             placeholder="Ingrese su teléfono - Whatsapp"
@@ -53,7 +49,7 @@ const FormContact = () => {
 
           <FormInputField
             control={newForm.control}
-            name="message"
+            name="mensaje"
             label="Mensaje"
             placeholder="Ingrese un mensaje (opcional)"
           />
