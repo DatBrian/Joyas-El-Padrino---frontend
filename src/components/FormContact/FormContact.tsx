@@ -25,41 +25,42 @@ const FormContact = () => {
   };
 
   return (
-    <>
-      <Form {...newForm}>
-        <form
-          id="contact-form"
-          onSubmit={newForm.handleSubmit(handleSubmit)}
-          className="flex flex-col gap-3 w-2/5 p-7 rounded-md"
-        >
-          <FormInputField
-            control={newForm.control}
-            name="nombre"
-            label="Nombre"
-            placeholder="Ingrese su nombre"
-          />
+    <Form {...newForm}>
+      <form
+        id="contact-form"
+        onSubmit={newForm.handleSubmit(handleSubmit)}
+        className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-lg p-6 md:p-8 lg:p-10 bg-white rounded-md shadow-md"
+      >
+        <FormInputField
+          control={newForm.control}
+          name="nombre"
+          label="Nombre"
+          placeholder="Ingrese su nombre"
+          className="w-full"
+        />
 
-          <FormInputField
-            control={newForm.control}
-            name="telefono"
-            label="Teléfono"
-            type="number"
-            placeholder="Ingrese su teléfono - Whatsapp"
-          />
+        <FormInputField
+          control={newForm.control}
+          name="telefono"
+          label="Teléfono"
+          type="number"
+          placeholder="Ingrese su teléfono - Whatsapp"
+          className="w-full"
+        />
 
-          <FormInputField
-            control={newForm.control}
-            name="mensaje"
-            label="Mensaje"
-            placeholder="Ingrese un mensaje (opcional)"
-          />
+        <FormInputField
+          control={newForm.control}
+          name="mensaje"
+          label="Mensaje"
+          placeholder="Ingrese un mensaje (opcional)"
+          className="w-full"
+        />
 
-          <Button className="mt-5 w-40 self-center" type="submit">
-            Enviar
-          </Button>
-        </form>
-      </Form>
-    </>
+        <Button className="mt-4 w-full sm:w-auto self-center" type="submit">
+          Enviar
+        </Button>
+      </form>
+    </Form>
   );
 };
 

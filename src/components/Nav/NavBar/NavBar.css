@@ -25,7 +25,7 @@ nav {
 .Btn {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: fle x-start;
   width: 45px;
   height: 45px;
   border: none;

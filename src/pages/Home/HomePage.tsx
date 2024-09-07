@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import "./HomePage.css";
-import NavBar from "@/components/Nav/NavBar/NavBar";
 
 const HomePage = () => {
   return (
     <>
-      <NavBar />
-
       <section className="mt-20 h-max bg-black flex overflow-hidden flex-col">
         <div
           id="banner"

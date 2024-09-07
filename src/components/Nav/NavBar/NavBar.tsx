@@ -43,13 +43,21 @@ const NavBar = () => {
         <div
           id="menu"
           className={`absolute xl:hidden top-20 left-0 w-full bg-white flex flex-col items-center  font-semibold text-lg transform ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
+            isMenuOpen ? "flex" : "hidden"
           }`}
         >
-          <LinkMenu to={"/"}>Home</LinkMenu>
-          <LinkMenu to={"/"}>Home</LinkMenu>
-          <LinkMenu to={"/"}>Home</LinkMenu>
-          <LinkMenu to={"/"}>Home</LinkMenu>
+          <LinkMenu onClick={() => setIsMenuOpen(false)} to={"/"}>
+            Home
+          </LinkMenu>
+          <LinkMenu onClick={() => setIsMenuOpen(false)} to={"/services"}>
+            Servicios
+          </LinkMenu>
+          <LinkMenu onClick={() => setIsMenuOpen(false)} to={"/about"}>
+            About
+          </LinkMenu>
+          <LinkMenu onClick={() => setIsMenuOpen(false)} to={"/contact"}>
+            Contacto
+          </LinkMenu>
         </div>
       </nav>
     </>
