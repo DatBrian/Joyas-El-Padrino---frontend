@@ -9,6 +9,7 @@ import Messages from "@/pages/Messages/Messages";
 import ServiciosPage from "@/pages/Servicios/ServiciosPage";
 import AboutPage from "@/pages/About/AboutPage";
 import ContactPage from "@/pages/Contact/ContactPage";
+import SellersPage from "@/pages/Sellers/SellersPage";
 
 const router = createBrowserRouter([
   {
@@ -22,15 +23,15 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <ServiciosPage />
+        element: <ServiciosPage />,
       },
       {
         path: "about",
-        element: <AboutPage/>
+        element: <AboutPage />,
       },
       {
         path: "contact",
-        element: <ContactPage/>
+        element: <ContactPage />,
       },
       {
         path: "login",
@@ -54,7 +55,10 @@ const router = createBrowserRouter([
       {
         path: "messages",
         element: <Messages />,
-        
+      },
+      {
+        path: "sellers",
+        element: <SellersPage />,
       },
     ],
   },

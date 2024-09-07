@@ -20,8 +20,8 @@ const FormContact = () => {
   });
 
   const handleSubmit = async (data: IPostMessage) => {
-    const res = await postMesage(data);
-    console.log(res);
+    await postMesage(data);
+    newForm.reset();
   };
 
   return (
