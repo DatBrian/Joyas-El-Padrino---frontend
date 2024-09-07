@@ -1,5 +1,6 @@
 import MessagesList from "@/components/Messages/MessagesList/MessagesList";
 import NavMessages from "@/components/Nav/NavMessages/NavMessages";
+import "./Messages.css"
 
 const Messages = () => {
   return (

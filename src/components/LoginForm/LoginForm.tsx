@@ -8,10 +8,12 @@ import { Button } from "../ui/button";
 import { IUserLogin } from "@/types";
 import { loginRequest } from "@/api";
 import { useAuthStore } from "@/store/authStore/authStore";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const setToken = useAuthStore((state) => state.setToken);
   const setName = useAuthStore((state) => state.setProfile);
+  const navigate = useNavigate();
   const newForm = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -30,6 +32,7 @@ const LoginForm = () => {
     const token = resLogin.data.token;
     const name = resLogin.data.usuario.name;
     setAuthValues(token, name);
+    navigate("/admin");
   };
 
   return (
