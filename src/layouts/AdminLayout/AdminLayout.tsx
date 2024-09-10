@@ -4,12 +4,15 @@ import "./AdminLayout.css";
 import { useMessagesStore } from "@/store/messagesStore/messagesStore";
 import { useEffect } from "react";
 import { getAllMessages } from "@/api";
+import { useSellersStore } from "@/store/sellersStore/sellersStore";
+import { getAllSellers } from "@/api/sellers";
 
 const AdminLayout = () => {
   const setAllMessages = useMessagesStore((state) => state.setAllMessages);
   const setFilteredMessages = useMessagesStore(
     (state) => state.setFilteredMessages
   );
+  const setAllSellers = useSellersStore((state) => state.setAllSellers);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -22,8 +25,18 @@ const AdminLayout = () => {
       }
     };
 
+    const fetchSellers = async () => {
+      try {
+        const sellers = await getAllSellers();
+        setAllSellers(sellers?.data);
+      } catch (error) {
+        console.error("Error fetching sellers:", error);
+      }
+    };
+
     fetchMessages();
-  }, [setAllMessages, setFilteredMessages]);
+    fetchSellers();
+  }, [setAllMessages, setAllSellers, setFilteredMessages]);
 
   return (
     <>
