@@ -6,12 +6,17 @@ const Footer = () => {
     <>
       <footer id="Footer" className="text-center text-white w-full">
         <div className="flex flex-col">
-          <h1 id="footerTitle" className="text-4xl my-8">Síguenos</h1>
+          <h1 id="footerTitle" className="text-4xl my-8">
+            Síguenos
+          </h1>
           <div id="footerButtons" className="w-full flex gap-14 justify-center">
-            <FooterLink icon="bxl-whatsapp" link="https:/whatsapp"></FooterLink>
+            <FooterLink
+              icon="bxl-whatsapp"
+              link="https://wa.me/message/ZQ6K6BTQIEXLG1"
+            ></FooterLink>
             <FooterLink
               icon="bxl-facebook-circle"
-              link="https://facebook"
+              link="https://wa.me/message/ZQ6K6BTQIEXLG1"
             ></FooterLink>
             <FooterLink
               icon="bxl-instagram"

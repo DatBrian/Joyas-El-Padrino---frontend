@@ -10,6 +10,7 @@ import ServiciosPage from "@/pages/Servicios/ServiciosPage";
 import AboutPage from "@/pages/About/AboutPage";
 import ContactPage from "@/pages/Contact/ContactPage";
 import SellersPage from "@/pages/Sellers/SellersPage";
+import SellerDetails from "@/components/Sellers/SellersDetails/SellerDetails";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,12 @@ const router = createBrowserRouter([
       {
         path: "sellers",
         element: <SellersPage />,
+        children: [
+          {
+            path: ":id",
+            element: <SellerDetails />,
+          },
+        ],
       },
     ],
   },

@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import "./HomePage.css";
 
 const HomePage = () => {
+  const handleClick = () => {
+    window.open("https://wa.me/message/ZQ6K6BTQIEXLG1", "_blank");
+  };
+
   return (
     <>
       <section className="mt-20 h-max bg-black flex overflow-hidden flex-col">
@@ -19,7 +23,9 @@ const HomePage = () => {
               Creaciones personalizadas que reflejan tu estilo y esencia.
               Encuentra la joya perfecta, hecha a la medida para ti.
             </h3>
-            <Button id="buttonHome">Consigue la Tuya</Button>
+            <Button id="buttonHome" onClick={handleClick}>
+              Consigue la Tuya
+            </Button>
           </div>
         </div>
       </section>

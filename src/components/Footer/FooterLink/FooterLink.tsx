@@ -1,4 +1,4 @@
-import "./FooterLink.css"
+import "./FooterLink.css";
 
 interface FooterLinkProps {
   icon: string;
@@ -8,7 +8,7 @@ interface FooterLinkProps {
 const FooterLink = ({ icon, link }: FooterLinkProps) => {
   return (
     <>
-      <a  href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <i className={`footerIcon bx ${icon}`}></i>
       </a>
     </>

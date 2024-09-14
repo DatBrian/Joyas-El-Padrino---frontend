@@ -26,6 +26,20 @@ export interface IPostUser {
   rol: string;
 }
 
+export interface IGetSeller {
+  _id: string;
+  nombre: string;
+  cedula: number;
+  direccion: string;
+  telefono: number;
+  correo: string;
+  rol: string;
+  clientes: any[];
+  totalSaldos: number;
+  numeroClientes: number;
+}
+
+
 // export type IPostUser = Omit<
 //   IGetUser,
 //   "_id" | "__v" | "createdAt" | "updatedAt"

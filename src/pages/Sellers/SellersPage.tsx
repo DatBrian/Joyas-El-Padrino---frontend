@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import SellersList from "@/components/Sellers/SellersList/SellersList";
 import AddSellerModal from "@/components/Sellers/AddSellerModal/AddSellerModal";
+import { Outlet } from "react-router-dom";
 import "./SellersPage.css";
 
 const SellersPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const { id } = useParams(); // Extraer el parámetro id de la ruta
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
@@ -20,9 +23,14 @@ const SellersPage = () => {
             onClick={handleOpenModal}
           ></i>
         </div>
-        <div className="flex-grow overflow-auto bg-slate-400 rounded-sm">
-          <SellersList />
-        </div>
+
+        {id ? (
+          <Outlet />
+        ) : (
+          <div className="flex-grow overflow-auto bg-slate-400 rounded-sm">
+            <SellersList />
+          </div>
+        )}
       </section>
 
       <AddSellerModal isOpen={isModalOpen} onClose={handleCloseModal} />

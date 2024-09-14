@@ -9,7 +9,8 @@ body {
   scroll-behavior: smooth !important;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "GFS Didot", serif;
 }
 
@@ -17,8 +18,9 @@ p {
   font-family: "Merriweather", serif;
 }
 
-main,section {
-  height: 70vh;
+main,
+section {
+  height: max-content;
 }
 
 @layer base {
