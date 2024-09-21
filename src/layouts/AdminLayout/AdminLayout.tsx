@@ -4,15 +4,18 @@ import "./AdminLayout.css";
 import { useMessagesStore } from "@/store/messagesStore/messagesStore";
 import { useEffect } from "react";
 import { getAllMessages } from "@/api";
-import { useSellersStore } from "@/store/sellersStore/sellersStore";
-import { getAllSellers } from "@/api/sellers";
+import { useUsersStore } from "@/store/usersStore/usersStore";
+import { getAllSellers, getUsersBySeller } from "@/api/users";
+import { useAuthStore } from "@/store/authStore/authStore";
 
 const AdminLayout = () => {
   const setAllMessages = useMessagesStore((state) => state.setAllMessages);
   const setFilteredMessages = useMessagesStore(
     (state) => state.setFilteredMessages
   );
-  const setAllSellers = useSellersStore((state) => state.setAllSellers);
+  const setAllSellers = useUsersStore((state) => state.setAllSellers);
+  const setAllClients = useUsersStore((state) => state.setAllClients);
+  const id = useAuthStore((state) => state.id);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -25,17 +28,19 @@ const AdminLayout = () => {
       }
     };
 
-    const fetchSellers = async () => {
+    const fetchUsers = async () => {
       try {
         const sellers = await getAllSellers();
+        const clients = await getUsersBySeller(id);
         setAllSellers(sellers?.data);
+        setAllClients(clients);
       } catch (error) {
         console.error("Error fetching sellers:", error);
       }
     };
 
     fetchMessages();
-    fetchSellers();
+    fetchUsers();
   }, [setAllMessages, setAllSellers, setFilteredMessages]);
 
   return (

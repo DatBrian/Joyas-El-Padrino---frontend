@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   scroll-behavior: smooth !important;
@@ -20,6 +26,7 @@ p {
 
 main,
 section {
+  min-height: 100vh;
   height: max-content;
 }
 

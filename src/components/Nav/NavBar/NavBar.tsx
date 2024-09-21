@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className=" fixed w-full z-20 flex justify-between items-center text-white h-20 px-8 md:px-32 drop-shadow-md">
+      <nav className=" fixed w-full z-30 flex justify-between items-center text-white h-20 px-8 md:px-32 drop-shadow-md">
         <div id="logo"></div>
         <div className="hidden xl:flex items-center gap-7 font-semibold text-base h-full">
           <Link className="navLinkBtn" to={"/"}>

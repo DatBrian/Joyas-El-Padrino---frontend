@@ -2,18 +2,20 @@ import {
   Card,
   CardContent,
   CardDescription,
-  //   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { IGetUser } from "@/types";
 import { useNavigate } from "react-router-dom";
 
-const SellersItem: React.FC<{ seller: IGetUser }> = ({ seller }) => {
+const UsersItem: React.FC<{ user: IGetUser; route: string }> = ({
+  user,
+  route,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/admin/sellers/${seller._id}`);
+    navigate(`${route}/${user._id}`);
   };
 
   return (
@@ -21,8 +23,8 @@ const SellersItem: React.FC<{ seller: IGetUser }> = ({ seller }) => {
       <CardHeader className="flex items-center">
         <i className="bx bxs-user-detail bx-md mr-2 text-xl" />
         <div>
-          <CardTitle>{seller.nombre}</CardTitle>
-          <CardDescription>{seller.rol}</CardDescription>
+          <CardTitle>{user.nombre}</CardTitle>
+          <CardDescription>{user.rol}</CardDescription>
         </div>
       </CardHeader>
       <CardContent></CardContent>
@@ -30,4 +32,4 @@ const SellersItem: React.FC<{ seller: IGetUser }> = ({ seller }) => {
   );
 };
 
-export default SellersItem;
+export default UsersItem;

@@ -7,6 +7,7 @@ export const useAuthStore = create(
     (set) => ({
       name: "",
       token: "",
+      id:"",
       setToken: (token: string) =>
         set(() => ({
           token,
@@ -14,6 +15,10 @@ export const useAuthStore = create(
       setProfile: (name: string) =>
         set(() => ({
           name,
+        })),
+      setId: (id: string) =>
+        set(() => ({
+          id,
         })),
     }),
     { name: "auth" }

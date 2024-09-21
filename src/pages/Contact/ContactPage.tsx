@@ -1,4 +1,4 @@
-import FormContact from "@/components/FormContact/FormContact";
+import FormContact from "@/components/Forms/FormContact/FormContact";
 import "./ContactPage.css";
 
 const ContactPage = () => {

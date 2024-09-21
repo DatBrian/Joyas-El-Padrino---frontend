@@ -11,6 +11,8 @@ import AboutPage from "@/pages/About/AboutPage";
 import ContactPage from "@/pages/Contact/ContactPage";
 import SellersPage from "@/pages/Sellers/SellersPage";
 import SellerDetails from "@/components/Sellers/SellersDetails/SellerDetails";
+import ClientesPage from "@/pages/Clientes/ClientesPage";
+import ClientDetails from "@/components/Clientes/ClientesDetails/ClientesDetails";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,16 @@ const router = createBrowserRouter([
           {
             path: ":id",
             element: <SellerDetails />,
+          },
+        ],
+      },
+      {
+        path: "customers",
+        element: <ClientesPage />,
+        children: [
+          {
+            path: ":id",
+            element: <ClientDetails />,
           },
         ],
       },

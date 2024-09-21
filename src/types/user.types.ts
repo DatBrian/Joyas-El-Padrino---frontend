@@ -34,11 +34,31 @@ export interface IGetSeller {
   telefono: number;
   correo: string;
   rol: string;
-  clientes: any[];
+  clientes: Cliente[];
   totalSaldos: number;
   numeroClientes: number;
 }
 
+export interface IGetSellerDetails {
+  _id: string;
+  nombre: string;
+  cedula: number;
+  direccion: string;
+  telefono: number;
+  correo: string;
+  rol: string;
+  clientes: Cliente[];
+  saldos: unknown[];
+  createdAt: Date;
+  updatedAt: Date;
+  __v: number;
+}
+
+export interface Cliente {
+  _id: string;
+  nombre: string;
+  saldos: unknown[];
+}
 
 // export type IPostUser = Omit<
 //   IGetUser,

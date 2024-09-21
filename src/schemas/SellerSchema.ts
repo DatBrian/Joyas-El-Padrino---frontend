@@ -1,6 +1,7 @@
 import * as z from "zod";
 
 export const SellerSchema = z.object({
+  vendedor_id: z.string().optional(),
   nombre: z.string(),
   cedula: z
     .string()

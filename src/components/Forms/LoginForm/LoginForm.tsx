@@ -2,17 +2,19 @@ import { LoginSchema } from "@/schemas/LoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Form } from "../ui/form";
-import FormInputField from "../ui/FormField/FormInputField";
-import { Button } from "../ui/button";
+import { Form } from "../../ui/form";
+import FormInputField from "../../ui/FormField/FormInputField";
+import { Button } from "../../ui/button";
 import { IUserLogin } from "@/types";
 import { loginRequest } from "@/api";
 import { useAuthStore } from "@/store/authStore/authStore";
 import { useNavigate } from "react-router-dom";
+import { decodeToken } from "@/utils";
 
 const LoginForm = () => {
   const setToken = useAuthStore((state) => state.setToken);
   const setName = useAuthStore((state) => state.setProfile);
+  const setId = useAuthStore((state) => state.setId);
   const navigate = useNavigate();
   const newForm = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -23,12 +25,16 @@ const LoginForm = () => {
   });
 
   const setAuthValues = (token: string, name: string) => {
+    const id = decodeToken(token).sub;
+    setId(id);
     setToken(token);
     setName(name);
   };
 
   const handleSubmit = async (data: IUserLogin) => {
     const resLogin = await loginRequest(data);
+    console.log(resLogin);
+
     const token = resLogin.data.token;
     const name = resLogin.data.usuario.name;
     setAuthValues(token, name);
