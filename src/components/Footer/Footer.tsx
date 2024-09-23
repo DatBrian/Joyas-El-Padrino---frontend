@@ -4,7 +4,7 @@ import FooterLink from "./FooterLink/FooterLink";
 const Footer = () => {
   return (
     <>
-      <footer id="Footer" className="text-center text-white w-full">
+      <footer id="Footer" className="text-center text-white w-full py-10">
         <div className="flex flex-col">
           <h1 id="footerTitle" className="text-4xl my-8">
             Síguenos

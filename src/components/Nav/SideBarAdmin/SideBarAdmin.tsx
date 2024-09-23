@@ -12,10 +12,9 @@ const SideBarAdmin = () => {
         isOpen ? "w-64" : "w-28"
       } bg-gray-800 text-white z-20`}
     >
+      {/* Botón visible solo en pantallas pequeñas */}
       <button
-        className={`absolute right-0 top-4 p-2 transition-transform duration-300 ${
-          isOpen ? "rotate-180" : ""
-        }`}
+        className={`absolute right-0 top-4 p-2 transition-transform duration-300 md:hidden`} // Solo visible en pantallas pequeñas
         onClick={() => setIsOpen(!isOpen)}
       >
         <i
@@ -27,62 +26,29 @@ const SideBarAdmin = () => {
       <div id="profile" className="flex flex-col items-center mt-6 mb-14">
         <i
           className={`bx bx-user-circle bx-lg text-white ${
-            isOpen ? "" : "hidden"
+            isOpen ? "" : "hidden md:block" // Siempre visible en pantallas grandes
           }`}
         ></i>
-        {isOpen && <h2 className="mt-2">{nombre}</h2>}
+        {(isOpen || window.innerWidth >= 768) && (
+          <h2 className="mt-2">{nombre}</h2>
+        )}{" "}
+        {/* Siempre muestra el nombre en pantallas grandes */}
       </div>
       <ul className="space-y-8 mt-4">
-        <li className="flex items-center">
-          <Link
-            to="/admin/dashboard"
-            className={`flex items-center ${
-              isOpen ? "ml-2" : ""
-            } hover:text-gray-400`}
-          >
-            {isOpen && <span>Dashboard</span>}
-          </Link>
-        </li>
-        <li className="flex items-center">
-          <Link
-            to="/admin/messages"
-            className={`flex items-center ${
-              isOpen ? "ml-2" : ""
-            } hover:text-gray-400`}
-          >
-            {isOpen && <span>Mensajes</span>}
-          </Link>
-        </li>
-        <li className="flex items-center">
-          <Link
-            to="/admin/sellers"
-            className={`flex items-center ${
-              isOpen ? "ml-2" : ""
-            } hover:text-gray-400`}
-          >
-            {isOpen && <span>Vendedores</span>}
-          </Link>
-        </li>
-        <li className="flex items-center">
-          <Link
-            to="/admin/customers"
-            className={`flex items-center ${
-              isOpen ? "ml-2" : ""
-            } hover:text-gray-400`}
-          >
-            {isOpen && <span>Clientes</span>}
-          </Link>
-        </li>
-        <li className="flex items-center">
-          <Link
-            to="/admin/products"
-            className={`flex items-center ${
-              isOpen ? "ml-2" : ""
-            } hover:text-gray-400`}
-          >
-            {isOpen && <span>Productos</span>}
-          </Link>
-        </li>
+        {["dashboard", "messages", "sellers", "customers"].map((item) => (
+          <li key={item} className="flex items-center">
+            <Link
+              to={`/admin/${item}`}
+              className={`flex items-center ${
+                isOpen ? "ml-2" : ""
+              } hover:text-gray-400`}
+            >
+              {isOpen && (
+                <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+              )}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

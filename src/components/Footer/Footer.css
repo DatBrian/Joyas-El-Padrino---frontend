@@ -1,5 +1,5 @@
 #Footer {
-  height: 11em;
+  height: max-content;
   position: static;
   background-color: #1a1a1a;
 }

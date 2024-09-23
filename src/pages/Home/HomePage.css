@@ -1,3 +1,7 @@
+#homePageC{
+  background-color: #1a1a1a;
+}
+
 #banner {
   background-image: url("/src/assets/images/banner1.jpg");
   background-blend-mode: multiply;
@@ -11,4 +15,8 @@
 
 #buttonHome {
   background-color: #1a1a1a;
+}
+
+.homeImage{
+  height: 20em;
 }

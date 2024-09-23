@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getSellerDetails } from "@/api/users";
-import { IGetSellerDetails } from "@/types";
+import { Cliente, IGetSellerDetails } from "@/types";
 import { useParams } from "react-router-dom";
 import "./SellerDetails.css";
 
@@ -9,13 +9,18 @@ const SellerDetails = () => {
   const [seller, setSeller] = useState<IGetSellerDetails | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [ventas, setVentas] = useState(0);
-  const [compras, setCompras] = useState(0);
+  const [ventas, setVentas] = useState<Cliente[] | undefined>([]);
+  const [compras, setCompras] = useState<unknown[] | undefined>([]);
 
   useEffect(() => {
     const fetchSellerDetails = async () => {
       try {
         const result = await getSellerDetails(id);
+        setVentas(result?.clientes);
+        setCompras(result?.saldos);
+        console.log(ventas);
+        console.log(compras);
+
         setSeller(result || null);
         console.log(seller);
       } catch (err) {
@@ -69,11 +74,11 @@ const SellerDetails = () => {
         <div className="flex flex-col py-10 gap-y-8 bg-blue-500 text-center text-white rounded-lg row-span-2">
           <div id="ventas">
             <h2>Ventas Totales</h2>
-            <h1 className="text-5xl">${ventas}</h1>
+            <h1 className="text-5xl">$0</h1>
           </div>
           <div id="compras">
             <h2>Compras Totales</h2>
-            <h1 className="text-5xl">${compras}</h1>
+            <h1 className="text-5xl">$0</h1>
           </div>
         </div>
         <div className="bg-blue-500 text-white rounded-lg row-span-2 col-span-2">
