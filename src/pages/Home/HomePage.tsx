@@ -33,8 +33,11 @@ const HomePage = () => {
 
   return (
     <>
-      <div id="homePageC" className="pb
-      -20">
+      <div
+        id="homePageC"
+        className="pb
+      -20"
+      >
         <section className="mt-20 h-max homeSection flex overflow-hidden flex-col">
           <div
             id="banner"
@@ -60,7 +63,7 @@ const HomePage = () => {
           <h1 className="text-center text-4xl my-20">
             Encuentra lo que estás buscando
           </h1>
-          <div className="m-14 flex justify-between ">
+          <div className="m-14 flex flex-col gap-10 items-center lg:flex-row lg:justify-between ">
             <img
               src="https://d2r9epyceweg5n.cloudfront.net/stores/002/054/772/rte/20240223_124936.jpg"
               alt="rosario"

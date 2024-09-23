@@ -11,7 +11,6 @@ export function HomeCarousel({ images }: { images: string[] }) {
     <Carousel
       opts={{
         align: "start",
-
         loop: true,
       }}
       plugins={[Autoplay({ delay: 2500, stopOnInteraction: true })]}
@@ -19,7 +18,10 @@ export function HomeCarousel({ images }: { images: string[] }) {
     >
       <CarouselContent>
         {images.map((src, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem
+            key={index}
+            className="w-full md:basis-1/2 lg:basis-1/3"
+          >
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
