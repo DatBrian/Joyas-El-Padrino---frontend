@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getUserDetails } from "@/api/users";
 import { IGetCompra, IGetSellerDetails } from "@/types";
 import { useParams } from "react-router-dom";
-import "./clientesDetails.css";
+import "./ClientesDetails.css";
 import { Button } from "@/components/ui/button";
 import AddSaldoModal from "@/components/Modals/AddSaldoModal/AddSaldoModal";
 
