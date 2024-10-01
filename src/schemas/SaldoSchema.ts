@@ -2,7 +2,9 @@ import * as z from "zod";
 
 export const SaldoSchema = z.object({
   cliente_id: z.string(),
-  fecha: z.date(),
+  fecha: z.string().refine((date) => !isNaN(Date.parse(date)), {
+    message: "fecha must be a valid ISO 8601 date string",
+  }),
   descripcion: z.string(),
   valor: z
     .string()

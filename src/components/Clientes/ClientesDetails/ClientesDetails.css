@@ -1,3 +1,39 @@
+/* #clientesDetails {
+  background-color: white;
+} */
+
 #pagosContainer {
   height: 70%;
+}
+
+#comprasContainer {
+  background-color: #4e5373;
+}
+
+.active {
+  background-color: #c9c36f;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+#compraButton {
+  background-color: #d6ae4c;
+}
+
+#userDeleteButton {
+  background-color: #CD5758;
+  width: 50%;
+}
+
+.pagoIcon{
+  font-size: 2em;
+  border: solid 1px #c9c36f;
+  background-color: #d6ae4c;
+  cursor: pointer;
+  transition: all ease-in .5s;
+}
+
+.pagoIcon:hover{
+  background-color: #c9c36f;
+  transform: scale(110%);
 }

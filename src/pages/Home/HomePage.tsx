@@ -91,7 +91,7 @@ const HomePage = () => {
           <div className="flex justify-center">
             <HomeCarousel images={aretesImages} />
           </div>
-          <h1 className="text-center text-4xl my-20">anillos</h1>
+          <h1 className="text-center text-4xl my-20">Anillos</h1>
           <div className="flex justify-center">
             <HomeCarousel images={anillosImages} />
           </div>

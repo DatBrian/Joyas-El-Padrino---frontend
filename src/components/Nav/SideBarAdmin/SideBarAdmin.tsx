@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthStore } from "@/store/authStore/authStore";
 import { Link } from "react-router-dom";
+import "./SideBarAdmin.css";
 
 const SideBarAdmin = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -8,9 +9,10 @@ const SideBarAdmin = () => {
 
   return (
     <div
+      id="sideBarAdmin"
       className={`fixed top-0 left-0 h-screen transition-all duration-300 ease-in-out ${
         isOpen ? "w-64" : "w-28"
-      } bg-gray-800 text-white z-20`}
+      }  text-white z-20`}
     >
       {/* Botón visible solo en pantallas pequeñas */}
       <button

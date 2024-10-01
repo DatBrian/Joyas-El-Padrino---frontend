@@ -3,6 +3,7 @@ import UsersList from "@/components/ui/Users/UsersList/UsersList";
 import { useUsersStore } from "@/store/usersStore/usersStore";
 import { useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
+import "./ClientesPage.css";
 
 const ClientesPage = () => {
   const { id } = useParams();
@@ -13,9 +14,13 @@ const ClientesPage = () => {
 
   return (
     <>
-      <section className="flex flex-col flex-grow bg-gray-100 p-7">
+      <section className="adminSection flex flex-col flex-grow bg-gray-100 p-7">
         <div className="flex justify-between">
-          <h1 className="text-center text-5xl mb-9">Clientes</h1>
+          {id ? (
+            <h1 className="text-center text-5xl mb-9">Detalles del cliente</h1>
+          ) : (
+            <h1 className="text-center text-5xl mb-9">Clientes</h1>
+          )}
           <i
             id="addIconV"
             className="bx bx-plus bx-lg cursor-pointer hover:text-orange-400"

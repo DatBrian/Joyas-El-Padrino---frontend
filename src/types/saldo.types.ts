@@ -1,6 +1,6 @@
 export interface IPostSaldo {
   cliente_id: string;
-  fecha: Date;
+  fecha: string;
   descripcion: string;
   valor: string;
   saldo_actual?: string;

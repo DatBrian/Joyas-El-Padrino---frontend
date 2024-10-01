@@ -2,7 +2,7 @@ import React from "react";
 import { IAddSaldoModalProps } from "./AddSaldoModal.types";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { SaldoSchema } from "@/schemas/SaldoSchema";
+import { SaldoSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IPostSaldo } from "@/types";
 import { postSaldo } from "@/api";
@@ -17,7 +17,7 @@ const AddSaldoModal: React.FC<IAddSaldoModalProps> = ({ isOpen, onClose }) => {
     resolver: zodResolver(SaldoSchema),
     defaultValues: {
       cliente_id: id,
-      fecha: new Date(),
+      fecha: new Date().toISOString(),
       descripcion: "",
       valor: "",
       cuotas: "",
