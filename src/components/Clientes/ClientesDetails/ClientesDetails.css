@@ -1,13 +1,15 @@
+/* Estilos CSS */
+
 /* #clientesDetails {
   background-color: white;
 } */
 
-#pagosContainer {
-  height: 70%;
-}
-
 #comprasContainer {
   background-color: #4e5373;
+}
+
+.infoItem {
+  min-width: 50%;
 }
 
 .active {
@@ -21,19 +23,43 @@
 }
 
 #userDeleteButton {
-  background-color: #CD5758;
+  background-color: #cd5758;
   width: 50%;
 }
 
-.pagoIcon{
+.pagoIcon {
   font-size: 2em;
   border: solid 1px #c9c36f;
   background-color: #d6ae4c;
   cursor: pointer;
-  transition: all ease-in .5s;
+  transition: all ease-in 0.5s;
 }
 
-.pagoIcon:hover{
+.pagoIcon:hover {
   background-color: #c9c36f;
   transform: scale(110%);
+}
+
+.cancelIcon {
+  font-size: 2em;
+  border: solid 1px #c9c36f;
+  background-color: #cd5758;
+  cursor: pointer;
+  transition: all ease-in 0.5s;
+}
+
+.cancelIcon:hover {
+  background-color: #f95356;
+  transform: scale(110%);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #clientesDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .compra{
+    row-gap: 4em;
+  }
 }

@@ -10,7 +10,7 @@ const SideBarAdmin = () => {
   return (
     <div
       id="sideBarAdmin"
-      className={`fixed top-0 left-0 h-screen transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 transition-all duration-300 ease-in-out ${
         isOpen ? "w-64" : "w-28"
       }  text-white z-20`}
     >
